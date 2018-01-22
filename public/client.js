@@ -227,9 +227,11 @@
           that.next_line = document.createElement('div');
           that.message_list.appendChild(that.next_line);
         }
-        if (message.text) {
+        if (message.train) {
+          message.videoFormatted = message.video
+        } else if (message.text) {
           message.html = converter.makeHtml(message.text);
-        }
+        } 
 
         that.next_line.innerHTML = that.message_template({
           message: message
@@ -445,6 +447,8 @@
             for (var m = 0; m < history.length; m++) {
               that.renderMessage({
                 text: history[m].text,
+                train: history[m].train ? history[m].train : false,
+                video: history[m].video ? history[m].video : null,
                 type: history[m].type == 'message_received' ? 'outgoing' : 'incoming', // set appropriate CSS class
               });
             }

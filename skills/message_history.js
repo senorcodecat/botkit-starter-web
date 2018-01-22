@@ -26,6 +26,7 @@ module.exports = function(controller) {
 
     // log incoming messages to the user history
     controller.middleware.receive.use(function(bot, message, next) {
+      console.log("controller.middleware.receive.use called")
         controller.storage.users.get(message.user, function(err, user) {
             logMessage(message,user);
         });
@@ -34,6 +35,11 @@ module.exports = function(controller) {
 
 
     controller.middleware.format.use(function(bot, message, platform_message, next) {
+        console.log("controller.middleware.format.use called")
+
+        console.log("Format send middleware ", message)
+        console.log("Platform message is ", platform_message)
+
         controller.storage.users.get(message.to, function(err, user) {
             logMessage(platform_message,user);
         });

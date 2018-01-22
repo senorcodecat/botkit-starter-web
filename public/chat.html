@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Botkit Anywhere</title>
+        <title>TOP mortgage training Full Chat Client</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
         <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.4/dist/showdown.min.js"></script>
         <link rel="stylesheet" href="css/styles.css" />
@@ -32,6 +32,11 @@
                             {{/if}}
                             {{{message.html}}}
 
+                            {{#if message.train}}
+                                <div>
+                                  <iframe width="560" height="315" src="{{{message.videoFormatted}}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                </div>
+                            {{/if}}
                             {{#if message.open_link}}
                               <a href="{{{message.open_link}}}" target="_blank" class="button_message">{{#if message.link_title}}{{message.link_title}}{{else}}{{message.open_link}}{{/if}}</a>
                             {{/if}}
