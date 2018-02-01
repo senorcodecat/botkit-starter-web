@@ -1,9 +1,11 @@
     var converter = new showdown.Converter();
     converter.setOption('openLinksInNewWindow', true);
 
+    console.log("Location host: ", location.host)
+
     var Botkit = {
       config: {
-        ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host,
+        ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + 'localhost:3001',
         reconnect_timeout: 3000,
         max_reconnect: 5
       },
@@ -327,7 +329,6 @@
         console.log('Booting up');
 
         var that = this;
-
 
         that.message_window = document.getElementById("message_window");
 

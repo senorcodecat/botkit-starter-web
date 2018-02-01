@@ -63,6 +63,16 @@
             </footer>
         </div>
         </div>
-        <script src="client.js"></script>
+        <script src="client.js">
+            var user = {
+                id: '123456789',
+                first_name: 'Little',
+                last_name: 'Foot',
+                full_name: 'Little Foot Decker',
+                gender:	'male',
+                timezone: "America/Chicago"
+            };
+            Botkit.boot(user);
+        </script>    
     </body>
 </html>

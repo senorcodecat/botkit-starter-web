@@ -33,6 +33,14 @@ Botkit.boot(options);
 </div>
 <script src="/embed.js"></script>
 <link rel="stylesheet" href="/css/embed.css" />
-<script>
-Botkit.boot();
-</script>
+        <script>
+            var user = {
+                id: '123456789',
+                first_name: 'Little',
+                last_name: 'Foot',
+                full_name: 'Little Foot Decker',
+                gender:	'male',
+                timezone: "America/Chicago"
+            };
+            Botkit.boot(user);
+        </script>  
