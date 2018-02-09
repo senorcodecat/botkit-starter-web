@@ -5,7 +5,7 @@
 
     var Botkit = {
       config: {
-        ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + 'localhost:3001',
+        ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + 'localhost:3005',
         reconnect_timeout: 3000,
         max_reconnect: 5
       },
@@ -328,6 +328,8 @@
 
         console.log('Booting up');
 
+        console.log('Is there a user here? ', JSON.stringify(user))
+
         var that = this;
 
         that.message_window = document.getElementById("message_window");
@@ -478,11 +480,4 @@
 
         return that;
       }
-    };
-
-
-    (function() {
-      // your page initialization code here
-      // the DOM will be available here
-      Botkit.boot();
-    })();
+    }

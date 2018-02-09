@@ -8,7 +8,7 @@
     </head>
     <body >
       <div class="wrapper">
-
+            <h1>This is chat.html</h1>
         <div id="message_window">
             <div class="disconnected">
                 Disconnected... reconnecting!
@@ -63,16 +63,18 @@
             </footer>
         </div>
         </div>
-        <script src="client.js">
+        <script src="client.js"></script>
+        <script>
             var user = {
-                id: '123456789',
-                first_name: 'Little',
-                last_name: 'Foot',
-                full_name: 'Little Foot Decker',
+                id: '1499259716807449',
+                first_name: 'Senor',
+                last_name: 'Calcetines',
+                full_name: 'Senor Calcetines',
                 gender:	'male',
                 timezone: "America/Chicago"
             };
-            Botkit.boot(user);
-        </script>    
+            console.log("When does this fire?")
+            Botkit.boot(user)
+        </script>  
     </body>
 </html>
